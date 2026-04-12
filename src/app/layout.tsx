@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackgroundAnimation from "@/components/BackgroundAnimation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -116,8 +117,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <BackgroundAnimation />
         <Navbar />
-        <main className="pt-16">
+        <main className="pt-16 relative" style={{ zIndex: 2 }}>
           {children}
         </main>
         <Footer />

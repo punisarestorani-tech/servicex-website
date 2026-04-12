@@ -279,7 +279,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-b from-background via-secondary to-background">
+      <section className="relative min-h-screen flex items-center bg-gradient-to-b from-background/80 via-secondary/50 to-background/80">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
