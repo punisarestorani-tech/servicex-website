@@ -1,6 +1,10 @@
+import Link from 'next/link';
 import Section from '@/components/Section';
 import Button from '@/components/Button';
 import ProcessAnimation from '@/components/ProcessAnimation';
+import Reveal from '@/components/Reveal';
+import CountUp from '@/components/CountUp';
+import { getAllPosts, formatDate } from '@/lib/blog';
 
 const services = [
   {
@@ -276,28 +280,32 @@ const faqs = [
 ];
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-b from-background/80 via-secondary/50 to-background/80">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <section className="hero-glow relative min-h-screen flex items-center overflow-hidden">
+        {/* Floating gradient orbs */}
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <div className="float-orb absolute top-1/4 -left-20 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
+          <div className="float-orb absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" style={{ animationDelay: '-7s' }} />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block bg-primary/10 border border-primary/30 rounded-full px-4 py-1 text-primary text-sm mb-6">
+            <div className="animate-fade-up inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm mb-8">
+              <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-primary" />
               Digitalna Transformacija za SMB
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="animate-fade-up delay-100 text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
               Kontrola Procesa.{' '}
               <span className="text-primary">Ušteda Vremena.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted mb-8 max-w-3xl mx-auto">
+            <p className="animate-fade-up delay-200 text-lg md:text-xl text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
               Prilagođeni sistemi za praćenje i upravljanje vašim poslovanjem.
-              Od proizvodnje do isporuke - sve na jednom mjestu.
+              Od proizvodnje do isporuke — sve na jednom mjestu.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/kontakt" size="lg">
                 Zakažite Besplatnu Konsultaciju
               </Button>
@@ -315,7 +323,7 @@ export default function Home() {
           <div className="inline-block bg-primary/10 border border-primary/30 rounded-full px-4 py-1 text-primary text-sm mb-4">
             Pogledajte Demo
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Kako izgleda u praksi?
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -368,7 +376,7 @@ export default function Home() {
       {/* Pain Points Section */}
       <Section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Prepoznajete li ove probleme?
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -396,7 +404,7 @@ export default function Home() {
       {/* Stats Section */}
       <Section dark>
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
             Rezultati koje postižemo
           </h2>
         </div>
@@ -404,7 +412,7 @@ export default function Home() {
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {stat.value}
+                <CountUp value={stat.value} />
               </div>
               <div className="text-muted">{stat.label}</div>
             </div>
@@ -423,7 +431,7 @@ export default function Home() {
           <div className="inline-block bg-primary/10 border border-primary/30 rounded-full px-4 py-1 text-primary text-sm mb-4">
             Naši Projekti
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Primjeri iz prakse
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -479,7 +487,7 @@ export default function Home() {
             <div className="inline-block bg-primary/10 border border-primary/30 rounded-full px-3 py-1 text-primary text-sm mb-4">
               Naša Glavna Usluga
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Sistemi za Praćenje Procesa
             </h2>
             <p className="text-lg text-muted mb-6">
@@ -523,7 +531,7 @@ export default function Home() {
       {/* Target Audience Section */}
       <Section dark>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Kome je namijenjeno?
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -551,7 +559,7 @@ export default function Home() {
       {/* Other Services */}
       <Section id="usluge">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Kompletan Spektar Usluga
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -589,7 +597,7 @@ export default function Home() {
       {/* How It Works Section */}
       <Section dark id="kako-radimo">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Kako Radimo
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -624,7 +632,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <Section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Šta kažu naši klijenti
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -651,10 +659,54 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Latest Blog Posts */}
+      {latestPosts.length > 0 && (
+        <Section>
+          <div className="text-center mb-12">
+            <div className="inline-block bg-primary/10 border border-primary/30 rounded-full px-4 py-1 text-primary text-sm mb-4">
+              Sa našeg bloga
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Najnoviji uvidi i vodiči
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Praktični savjeti o automatizaciji, AI agentima i digitalnoj transformaciji
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group bg-card-bg border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 flex flex-col"
+              >
+                <div className="flex items-center gap-3 mb-4 text-xs text-muted">
+                  <time dateTime={post.date}>{formatDate(post.date)}</time>
+                  <span>·</span>
+                  <span>{post.readTime} min</span>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-muted text-sm flex-1">{post.description}</p>
+                <div className="mt-4 text-primary text-sm font-medium">
+                  Pročitaj više →
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Button href="/blog" variant="outline">
+              Svi postovi
+            </Button>
+          </div>
+        </Section>
+      )}
+
       {/* FAQ Section */}
       <Section dark>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Često postavljana pitanja
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -682,10 +734,10 @@ export default function Home() {
       {/* CTA Section */}
       <Section>
         <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl p-8 md:p-12 text-center border border-primary/30">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Spremni za Bolju Kontrolu?
           </h2>
-          <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-muted text-xl mb-8 max-w-2xl mx-auto">
             Zakažite besplatnu konsultaciju i saznajte kako možemo optimizovati
             vaše poslovne procese i značajno smanjiti troškove.
           </p>

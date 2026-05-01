@@ -22,9 +22,9 @@ export default function Button({
   const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200';
 
   const variants = {
-    primary: 'bg-primary hover:bg-primary-dark text-white',
+    primary: 'bg-primary hover:bg-primary-dark text-black font-semibold',
     secondary: 'bg-secondary hover:bg-accent text-foreground border border-border',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+    outline: 'border border-primary/40 text-primary hover:bg-primary hover:text-black',
   };
 
   const sizes = {

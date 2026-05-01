@@ -30,13 +30,13 @@ export default function BackgroundAnimation() {
     resize();
     window.addEventListener('resize', resize);
 
-    const count = 120;
+    const count = 60;
     particlesRef.current = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.7,
-      vy: (Math.random() - 0.5) * 0.7,
-      radius: Math.random() * 2 + 1.5,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      radius: Math.random() * 1.5 + 0.8,
     }));
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -73,16 +73,10 @@ export default function BackgroundAnimation() {
         p.vx *= 0.99;
         p.vy *= 0.99;
 
-        // Solid bright dot
+        // Soft warm dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(38, 163, 221, 0.9)';
-        ctx.fill();
-
-        // White center
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * 0.4, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+        ctx.fillStyle = 'rgba(0, 212, 170, 0.35)';
         ctx.fill();
 
         // Connections
@@ -93,11 +87,11 @@ export default function BackgroundAnimation() {
           const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
 
           if (cdist < connectionDistance) {
-            const alpha = (1 - cdist / connectionDistance) * 0.4;
+            const alpha = (1 - cdist / connectionDistance) * 0.12;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(38, 163, 221, ${alpha})`;
+            ctx.strokeStyle = `rgba(0, 212, 170, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -105,12 +99,12 @@ export default function BackgroundAnimation() {
 
         // Mouse connections
         if (dist < mouseDistance) {
-          const alpha = (1 - dist / mouseDistance) * 0.6;
+          const alpha = (1 - dist / mouseDistance) * 0.25;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(38, 163, 221, ${alpha})`;
-          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = `rgba(0, 212, 170, ${alpha})`;
+          ctx.lineWidth = 1.2;
           ctx.stroke();
         }
       }

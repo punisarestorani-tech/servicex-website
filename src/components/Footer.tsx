@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
+                <span className="text-black font-bold text-xl">S</span>
               </div>
               <span className="text-xl font-bold text-foreground">
                 Service<span className="text-primary">X</span>

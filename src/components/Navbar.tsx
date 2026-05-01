@@ -7,6 +7,7 @@ const navigation = [
   { name: 'Početna', href: '/' },
   { name: 'Usluge', href: '/usluge' },
   { name: 'Kako Radimo', href: '/kako-radimo' },
+  { name: 'Blog', href: '/blog' },
   { name: 'O Nama', href: '/o-nama' },
   { name: 'Kontakt', href: '/kontakt' },
 ];
@@ -21,7 +22,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
+              <span className="text-black font-bold text-xl">S</span>
             </div>
             <span className="text-xl font-bold text-foreground">
               Service<span className="text-primary">X</span>
@@ -34,14 +35,14 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-muted hover:text-primary transition-colors duration-200"
+                className="text-sm text-muted hover:text-primary transition-colors duration-200"
               >
                 {item.name}
               </Link>
             ))}
             <Link
               href="/kontakt"
-              className="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg transition-colors duration-200"
+              className="text-sm font-medium bg-primary hover:bg-primary-dark text-black px-5 py-2 rounded-lg transition-colors duration-200"
             >
               Besplatna Konsultacija
             </Link>
