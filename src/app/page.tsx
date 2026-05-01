@@ -322,7 +322,7 @@ export default function Home() {
             Pogledajte naše aplikacije u akciji
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Video 1 - Tehnička služba */}
           <div>
             <div className="relative w-full rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10" style={{ paddingBottom: '56.25%' }}>
@@ -348,6 +348,19 @@ export default function Home() {
               />
             </div>
             <p className="text-center text-muted mt-4">AI virtuelno probavanje odjeće</p>
+          </div>
+          {/* Video 3 */}
+          <div>
+            <div className="relative w-full rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/i5XIgmOb5bA"
+                title="ServiceX Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-center text-muted mt-4">ServiceX Demo</p>
           </div>
         </div>
       </Section>
