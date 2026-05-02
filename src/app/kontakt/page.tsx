@@ -47,17 +47,35 @@ export default function KontaktPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMsg(null);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ ime: '', email: '', kompanija: '', poruka: '' });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setErrorMsg(data.error ?? 'Greška pri slanju. Pokušajte ponovo.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({ ime: '', email: '', kompanija: '', poruka: '' });
+    } catch {
+      setErrorMsg('Greška u mreži. Provjerite konekciju i pokušajte ponovo.');
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -170,6 +188,11 @@ export default function KontaktPage() {
                     placeholder="Opišite kako vam možemo pomoći..."
                   />
                 </div>
+                {errorMsg && (
+                  <div className="bg-red-500/10 border border-red-500/40 text-red-300 rounded-lg p-3 text-sm">
+                    {errorMsg}
+                  </div>
+                )}
                 <Button type="submit" size="lg" className="w-full">
                   {isSubmitting ? 'Slanje...' : 'Pošalji Poruku'}
                 </Button>
