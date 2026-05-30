@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #FFFFFF;
-  --primary: #00D4AA;
-  --primary-dark: #00B894;
-  --secondary: #0A0A0A;
-  --accent: #141414;
-  --muted: #9CA3AF;
-  --card-bg: #0A0A0A;
-  --border: #1F2937;
+  /* Light, airy "digital transformation" palette */
+  --background: #FFFFFF;
+  --foreground: #0E1A2B;      /* deep navy slate */
+  --primary: #1E6FE0;         /* tech blue */
+  --primary-dark: #1557B0;
+  --secondary: #DDE7F4;       /* deeper light blue for alternating sections */
+  --accent: #E2E8F2;
+  --muted: #56657B;           /* slate body text (good contrast on white) */
+  --card-bg: #FFFFFF;
+  --border: #D2DCEC;
+  --mint: #00D4AA;            /* retained brand accent */
 }
 
 @theme inline {
@@ -22,12 +24,19 @@
   --color-muted: var(--muted);
   --color-card-bg: var(--card-bg);
   --color-border: var(--border);
+  --color-mint: var(--mint);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 html {
-  background: var(--background);
+  /* Soft tinted base with gentle blue/mint blooms so sections aren't flat white */
+  background:
+    radial-gradient(ellipse 48% 38% at 12% 14%, rgba(30, 111, 224, 0.10), transparent 55%),
+    radial-gradient(ellipse 44% 36% at 88% 20%, rgba(0, 212, 170, 0.09), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 50% 94%, rgba(30, 111, 224, 0.07), transparent 55%),
+    #ECF1F8;
+  background-attachment: fixed;
   scroll-behavior: smooth;
 }
 
@@ -44,12 +53,45 @@ h1[class], h2[class] {
   letter-spacing: -0.025em;
 }
 
-/* Hero radial glow — soft mint spotlight from top */
+/* Hero radial glow — soft blue/mint light wash */
 .hero-glow {
   background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 212, 170, 0.18), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(0, 212, 170, 0.08), transparent 70%),
-    #000000;
+    radial-gradient(ellipse 70% 55% at 72% 0%, rgba(30, 111, 224, 0.10), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 18% 100%, rgba(0, 212, 170, 0.08), transparent 70%),
+    #FFFFFF;
+}
+
+/* Faint technical grid — site-wide "circuit" visual language */
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(30, 111, 224, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 111, 224, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 85%);
+          mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 85%);
+}
+
+/* Soft lift on cards so they separate from the tinted section backgrounds */
+.bg-card-bg {
+  box-shadow: 0 1px 2px rgba(14, 26, 43, 0.04), 0 12px 28px -16px rgba(14, 26, 43, 0.12);
+}
+
+/* Deep "page hero" band — used on inner-page headers to match the homepage hero */
+.page-hero {
+  background:
+    radial-gradient(ellipse 55% 75% at 80% 25%, rgba(0, 212, 170, 0.16), transparent 60%),
+    radial-gradient(ellipse 70% 85% at 16% 0%, rgba(30, 111, 224, 0.26), transparent 62%),
+    #081320;
+}
+
+/* Technical grid for dark backgrounds (light lines) */
+.tech-grid-dark {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(ellipse 95% 95% at 50% 25%, #000 35%, transparent 85%);
+          mask-image: radial-gradient(ellipse 95% 95% at 50% 25%, #000 35%, transparent 85%);
 }
 
 /* Entrance animations — used by hero on page load */

@@ -285,33 +285,61 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-glow relative min-h-screen flex items-center overflow-hidden">
-        {/* Floating gradient orbs */}
-        <div aria-hidden className="absolute inset-0 pointer-events-none">
-          <div className="float-orb absolute top-1/4 -left-20 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
-          <div className="float-orb absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" style={{ animationDelay: '-7s' }} />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#081320]">
+        {/* Background — human + AI handshake (deep tones) */}
+        <div aria-hidden className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero-ai-dark.jpg"
+            alt=""
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Dark scrim — keeps light text legible over the left/center */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#081320]/92 via-[#081320]/55 to-[#081320]/10" />
+          {/* Blend the bottom edge into the light page below */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="animate-fade-up inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm mb-8">
-              <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-primary" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10 w-full">
+          <div className="max-w-2xl text-center lg:text-left">
+            <div className="animate-fade-up inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur rounded-full px-4 py-1.5 text-white text-sm mb-8">
+              <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-mint" />
               Digitalna Transformacija za SMB
             </div>
-            <h1 className="animate-fade-up delay-100 text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
-              Kontrola Procesa.{' '}
-              <span className="text-primary">Ušteda Vremena.</span>
+            <h1 className="animate-fade-up delay-100 text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+              Gdje se ljudi i{' '}
+              <span className="bg-gradient-to-r from-primary to-mint bg-clip-text text-transparent">
+                tehnologija
+              </span>{' '}
+              spajaju.
             </h1>
-            <p className="animate-fade-up delay-200 text-lg md:text-xl text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
-              Prilagođeni sistemi za praćenje i upravljanje vašim poslovanjem.
-              Od proizvodnje do isporuke — sve na jednom mjestu.
+            <p className="animate-fade-up delay-200 text-lg md:text-xl text-slate-200 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Prilagođeni sistemi, automatizacija i AI agenti koji preuzimaju
+              ručni rad — da vaš tim radi pametnije, a ne više.
             </p>
-            <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button href="/kontakt" size="lg">
                 Zakažite Besplatnu Konsultaciju
               </Button>
-              <Button href="/usluge" variant="outline" size="lg">
+              <Button
+                href="/usluge"
+                variant="outline"
+                size="lg"
+                className="!border-white/40 !text-white hover:!bg-white hover:!text-[#081320]"
+              >
                 Pogledajte Usluge
               </Button>
+            </div>
+            {/* Trust row */}
+            <div className="animate-fade-up delay-400 mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-sm text-slate-200">
+              {['Bez papira', 'Realno vrijeme', 'Prilagođeno vama'].map((t) => (
+                <span key={t} className="inline-flex items-center gap-2">
+                  <svg className="w-4 h-4 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
         </div>

@@ -73,10 +73,10 @@ export default function BackgroundAnimation() {
         p.vx *= 0.99;
         p.vy *= 0.99;
 
-        // Soft warm dot
+        // Soft tech-blue node
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 212, 170, 0.35)';
+        ctx.fillStyle = 'rgba(30, 111, 224, 0.45)';
         ctx.fill();
 
         // Connections
@@ -87,11 +87,11 @@ export default function BackgroundAnimation() {
           const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
 
           if (cdist < connectionDistance) {
-            const alpha = (1 - cdist / connectionDistance) * 0.12;
+            const alpha = (1 - cdist / connectionDistance) * 0.14;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 212, 170, ${alpha})`;
+            ctx.strokeStyle = `rgba(30, 111, 224, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -99,11 +99,11 @@ export default function BackgroundAnimation() {
 
         // Mouse connections
         if (dist < mouseDistance) {
-          const alpha = (1 - dist / mouseDistance) * 0.25;
+          const alpha = (1 - dist / mouseDistance) * 0.28;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(0, 212, 170, ${alpha})`;
+          ctx.strokeStyle = `rgba(30, 111, 224, ${alpha})`;
           ctx.lineWidth = 1.2;
           ctx.stroke();
         }

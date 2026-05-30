@@ -1,5 +1,6 @@
 import Section from '@/components/Section';
 import Button from '@/components/Button';
+import PageHero from '@/components/PageHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -105,17 +106,17 @@ export default function KakoRadimoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-secondary to-background py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Kako <span className="text-primary">Radimo</span>
-          </h1>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
-            Naš provjereni proces osigurava uspješnu implementaciju i mjerljive rezultate.
-            Od prve konsultacije do kontinuirane optimizacije.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={
+          <>
+            Kako{' '}
+            <span className="bg-gradient-to-r from-primary to-mint bg-clip-text text-transparent">
+              Radimo
+            </span>
+          </>
+        }
+        subtitle="Naš provjereni proces osigurava uspješnu implementaciju i mjerljive rezultate. Od prve konsultacije do kontinuirane optimizacije."
+      />
 
       {/* Process Steps */}
       <Section>

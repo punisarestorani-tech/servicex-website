@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Section from '@/components/Section';
+import PageHero from '@/components/PageHero';
 import { getAllPosts, formatDate } from '@/lib/blog';
 
 export const metadata: Metadata = {
@@ -24,20 +25,18 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <section className="hero-glow relative pt-20 pb-12">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            Blog
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-            Saznanja o <span className="text-primary">digitalizaciji</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-            Praktični vodiči o automatizaciji, AI agentima i digitalnoj transformaciji za male i srednje firme.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Blog"
+        title={
+          <>
+            Saznanja o{' '}
+            <span className="bg-gradient-to-r from-primary to-mint bg-clip-text text-transparent">
+              digitalizaciji
+            </span>
+          </>
+        }
+        subtitle="Praktični vodiči o automatizaciji, AI agentima i digitalnoj transformaciji za male i srednje firme."
+      />
 
       <Section>
         {posts.length === 0 ? (

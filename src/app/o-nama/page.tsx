@@ -1,5 +1,6 @@
 import Section from '@/components/Section';
 import Button from '@/components/Button';
+import PageHero from '@/components/PageHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -69,17 +70,17 @@ export default function ONamaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-secondary to-background py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            O <span className="text-primary">Nama</span>
-          </h1>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
-            ServiceX je tim stručnjaka posvećen tome da AI i automatizacija postanu dostupni
-            malim i srednjim preduzećima.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={
+          <>
+            O{' '}
+            <span className="bg-gradient-to-r from-primary to-mint bg-clip-text text-transparent">
+              Nama
+            </span>
+          </>
+        }
+        subtitle="ServiceX je tim stručnjaka posvećen tome da AI i automatizacija postanu dostupni malim i srednjim preduzećima."
+      />
 
       {/* Mission */}
       <Section>

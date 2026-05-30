@@ -2,6 +2,7 @@
 
 import Section from '@/components/Section';
 import Button from '@/components/Button';
+import PageHero from '@/components/PageHero';
 import { useState } from 'react';
 
 const contactInfo = [
@@ -88,17 +89,17 @@ export default function KontaktPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-secondary to-background py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            <span className="text-primary">Kontaktirajte</span> Nas
-          </h1>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
-            Imate pitanje ili želite da razgovaramo o vašem projektu?
-            Javite nam se - odgovorićemo u roku od 24 sata.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={
+          <>
+            <span className="bg-gradient-to-r from-primary to-mint bg-clip-text text-transparent">
+              Kontaktirajte
+            </span>{' '}
+            Nas
+          </>
+        }
+        subtitle="Imate pitanje ili želite da razgovaramo o vašem projektu? Javite nam se - odgovorićemo u roku od 24 sata."
+      />
 
       <Section>
         <div className="grid lg:grid-cols-2 gap-12">
