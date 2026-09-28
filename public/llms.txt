@@ -1,0 +1,27 @@
+# ServiceX
+
+> ServiceX je firma iz Budve (Crna Gora) za AI automatizaciju poslovnih procesa malih i srednjih preduzeća: prilagođeni sistemi za praćenje procesa u realnom vremenu, automatizacija repetitivnih zadataka, AI agenti i web aplikacije. ServiceX is an AI automation company from Budva, Montenegro, building custom process-tracking systems, workflow automation, AI agents and web applications for SMBs in the Balkans region.
+
+Ključne činjenice:
+
+- Usluge: sistemi za praćenje procesa (proizvodnja, hoteli, servisi), automatizacija poslovnih procesa, AI agenti, prilagođene web aplikacije, AR/AI rješenja za maloprodaju
+- Ciljni klijenti: proizvodne firme, hoteli i ugostiteljstvo, servisne firme, trgovine — u Crnoj Gori i regionu (rad na crnogorskom/srpskom jeziku, online saradnja)
+- Primjeri iz prakse: digitalizacija prijave kvarova u hotelu (70% brža reakcija), praćenje proizvodnih narudžbi (50% manje kašnjenja), AI virtuelno probavanje odjeće za butike, upravljanje spremanjem hotelskih soba
+- Proces: besplatna konsultacija i analiza → razvoj prilagođenog rješenja → implementacija sa obukom tima; manji projekti 2–4 sedmice, kompleksniji 1–3 mjeseca
+- Kontakt: servicextechmne@gmail.com · https://www.servicex.tech/kontakt · odgovor u roku od 24 sata
+
+## Stranice
+
+- [Usluge](https://www.servicex.tech/usluge): detaljan pregled usluga — praćenje procesa, automatizacija, AI agenti, web aplikacije, integracije, inovativna rješenja
+- [Kako radimo](https://www.servicex.tech/kako-radimo): proces saradnje od analize do implementacije i podrške
+- [O nama](https://www.servicex.tech/o-nama): tim i vrijednosti firme
+- [Kontakt](https://www.servicex.tech/kontakt): kontakt forma, česta pitanja o cijeni konsultacije i trajanju projekata
+
+## Blog (vodiči)
+
+- [Excel vs prilagođen sistem](https://www.servicex.tech/blog/excel-vs-prilagodjen-sistem): kada Excel tabele postaju kočnica i šta donosi prilagođen sistem
+- [Web sajt ili aplikacija](https://www.servicex.tech/blog/web-sajt-ili-aplikacija): razlika između sajta, web aplikacije i mobilne aplikacije — šta kome treba
+- [Pet procesa za automatizaciju](https://www.servicex.tech/blog/pet-procesa-za-automatizaciju): procesi koje male firme najčešće automatizuju
+- [Digitalizacija hotela](https://www.servicex.tech/blog/digitalizacija-hotela): prijava kvarova, domaćinstvo, zahtjevi gostiju
+- [Praćenje narudžbi u proizvodnji](https://www.servicex.tech/blog/pracenje-narudzbi-u-proizvodnji): od prijema narudžbe do isporuke u realnom vremenu
+- [AI agenti za male firme](https://www.servicex.tech/blog/ai-agenti-male-firme): šta AI agenti realno mogu da preuzmu
