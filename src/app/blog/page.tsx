@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       'Vodiči o automatizaciji, AI agentima i digitalnoj transformaciji za male i srednje firme.',
     url: 'https://www.servicex.tech/blog',
     type: 'website',
+    images: ['/og-image.png'],
   },
 };
 

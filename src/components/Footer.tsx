@@ -10,11 +10,9 @@ const footerLinks = {
   kompanija: [
     { name: 'O Nama', href: '/o-nama' },
     { name: 'Kako Radimo', href: '/kako-radimo' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'FAQ', href: '/kontakt#faq' },
     { name: 'Kontakt', href: '/kontakt' },
-  ],
-  resursi: [
-    { name: 'Blog', href: '#' },
-    { name: 'FAQ', href: '#' },
   ],
 };
 

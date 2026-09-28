@@ -4,8 +4,15 @@ import PageHero from '@/components/PageHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Kako Radimo | ServiceX - AI Automatizacija',
-  description: 'Saznajte kako ServiceX pristupa projektima automatizacije - od analize do implementacije i kontinuirane optimizacije.',
+  title: 'Kako Radimo — Od Analize do Implementacije',
+  description: 'Saznajte kako ServiceX pristupa projektima automatizacije - od besplatne konsultacije i analize procesa, preko razvoja, do implementacije i podrške.',
+  alternates: { canonical: '/kako-radimo' },
+  openGraph: {
+    title: 'Kako Radimo | ServiceX',
+    description: 'Proces u tri koraka: analiza, razvoj, implementacija sa obukom tima.',
+    url: '/kako-radimo',
+    images: ['/og-image.png'],
+  },
 };
 
 const steps = [

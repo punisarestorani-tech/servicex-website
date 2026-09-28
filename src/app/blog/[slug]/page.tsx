@@ -37,11 +37,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
+      images: ['/og-image.png'],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
+      images: ['/og-image.png'],
     },
   };
 }
@@ -69,10 +71,6 @@ export default async function BlogPostPage({ params }: PageProps) {
       '@type': 'Organization',
       name: 'ServiceX',
       url: 'https://www.servicex.tech',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.servicex.tech/logo.png',
-      },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',

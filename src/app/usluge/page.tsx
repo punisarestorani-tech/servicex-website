@@ -4,8 +4,15 @@ import PageHero from '@/components/PageHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Usluge | ServiceX - AI Automatizacija',
-  description: 'Otkrijte naše usluge automatizacije procesa, AI agenata, web aplikacija i sistemskih integracija za vaše poslovanje.',
+  title: 'Usluge — Automatizacija Procesa, AI Agenti i Web Aplikacije',
+  description: 'Praćenje poslovnih procesa u realnom vremenu, automatizacija repetitivnih zadataka, AI agenti i prilagođene web aplikacije za mala i srednja preduzeća.',
+  alternates: { canonical: '/usluge' },
+  openGraph: {
+    title: 'Usluge | ServiceX',
+    description: 'Praćenje procesa, automatizacija, AI agenti i prilagođene web aplikacije.',
+    url: '/usluge',
+    images: ['/og-image.png'],
+  },
 };
 
 const services = [

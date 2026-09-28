@@ -4,8 +4,15 @@ import PageHero from '@/components/PageHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'O Nama | ServiceX - AI Automatizacija',
-  description: 'Upoznajte ServiceX - tim stručnjaka posvećen transformaciji poslovanja kroz AI i automatizaciju.',
+  title: 'O Nama — Tim za AI Automatizaciju iz Crne Gore',
+  description: 'Upoznajte ServiceX - tim stručnjaka iz Budve posvećen transformaciji poslovanja kroz AI, automatizaciju i prilagođene softverske sisteme.',
+  alternates: { canonical: '/o-nama' },
+  openGraph: {
+    title: 'O Nama | ServiceX',
+    description: 'Tim stručnjaka za AI automatizaciju i prilagođene poslovne sisteme.',
+    url: '/o-nama',
+    images: ['/og-image.png'],
+  },
 };
 
 const values = [

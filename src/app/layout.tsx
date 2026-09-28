@@ -38,11 +38,13 @@ export const metadata: Metadata = {
     siteName: "ServiceX",
     type: "website",
     locale: "sr_RS",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ServiceX — AI Automatizacija za Vaš Biznis" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ServiceX | AI Automatizacija za Vaš Biznis",
     description: "AI automatizacija poslovnih procesa za mala i srednja preduzeća.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -67,7 +69,6 @@ const jsonLd = {
   '@type': 'Organization',
   name: 'ServiceX',
   url: 'https://www.servicex.tech',
-  logo: 'https://www.servicex.tech/logo.png',
   description: 'AI automatizacija poslovnih procesa za mala i srednja preduzeća u Crnoj Gori.',
   address: {
     '@type': 'PostalAddress',
@@ -77,10 +78,10 @@ const jsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    email: 'info@servicex.tech',
+    email: 'servicextechmne@gmail.com',
   },
   sameAs: [
-    'https://www.instagram.com/servicex.tech',
+    'https://www.instagram.com/servicexmne2025/',
   ],
   areaServed: {
     '@type': 'Country',
@@ -96,22 +97,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sr">
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-L197BY1HEV"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-L197BY1HEV');
-        `}
-      </Script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L197BY1HEV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L197BY1HEV');
+          `}
+        </Script>
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"

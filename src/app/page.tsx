@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Section from '@/components/Section';
 import Button from '@/components/Button';
@@ -5,6 +6,10 @@ import ProcessAnimation from '@/components/ProcessAnimation';
 import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
 import { getAllPosts, formatDate } from '@/lib/blog';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 const services = [
   {
@@ -282,8 +287,25 @@ const faqs = [
 export default function Home() {
   const latestPosts = getAllPosts().slice(0, 3);
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-[#081320]">
         {/* Background — human + AI handshake (deep tones) */}

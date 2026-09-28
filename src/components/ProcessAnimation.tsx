@@ -84,11 +84,7 @@ export default function ProcessAnimation() {
             <div
               key={`${step.label}-${index}`}
               className="flex flex-col items-center animate-fade-in"
-              style={{
-                animationDelay: `${step.delay * 300}ms`,
-                opacity: 0,
-                animation: `fadeIn 0.5s ease-out ${step.delay * 300}ms forwards`
-              }}
+              style={{ animationDelay: `${step.delay * 300}ms`, animationDuration: '0.5s' }}
             >
               {/* Icon */}
               <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-500 relative z-10 ${
@@ -194,18 +190,6 @@ export default function ProcessAnimation() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

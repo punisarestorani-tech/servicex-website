@@ -194,7 +194,7 @@ export default function KontaktPage() {
                     {errorMsg}
                   </div>
                 )}
-                <Button type="submit" size="lg" className="w-full">
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? 'Slanje...' : 'Pošalji Poruku'}
                 </Button>
               </form>
@@ -268,7 +268,7 @@ export default function KontaktPage() {
       </Section>
 
       {/* FAQ */}
-      <Section dark>
+      <Section dark id="faq">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Česta Pitanja
