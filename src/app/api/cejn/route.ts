@@ -7,6 +7,8 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
+// Frankfurt: iz podrazumijevanog iad1 (AWS us-east-1) cejn.gov.me takođe ne odgovara (04.11.2026)
+export const preferredRegion = 'fra1';
 
 const UPSTREAM = 'https://cejn.gov.me';
 const ALLOWED = [
@@ -62,8 +64,12 @@ async function relay(req: NextRequest, method: 'GET' | 'POST') {
       },
     });
   } catch (e) {
-    const msg = e instanceof Error ? e.message : String(e);
-    return NextResponse.json({ error: `CEJN nedostupan: ${msg}` }, { status: 502, headers: { 'Cache-Control': 'no-store' } });
+    const err = e as Error & { cause?: { code?: string; message?: string } };
+    const cause = err.cause?.code ? ` [${err.cause.code}] ${err.cause.message ?? ''}` : '';
+    return NextResponse.json(
+      { error: `CEJN nedostupan: ${err.message ?? String(e)}${cause}`, region: process.env.VERCEL_REGION ?? null },
+      { status: 502, headers: { 'Cache-Control': 'no-store' } }
+    );
   }
 }
 
