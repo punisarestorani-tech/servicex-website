@@ -6,6 +6,7 @@ import { useState } from 'react';
 const navigation = [
   { name: 'Početna', href: '/' },
   { name: 'Usluge', href: '/usluge' },
+  { name: 'Plaže i Hoteli', href: '/plaze-i-hoteli' },
   { name: 'Kako Radimo', href: '/kako-radimo' },
   { name: 'Blog', href: '/blog' },
   { name: 'O Nama', href: '/o-nama' },
@@ -30,19 +31,19 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm text-muted hover:text-primary transition-colors duration-200"
+                className="text-sm text-muted hover:text-primary transition-colors duration-200 whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
             <Link
               href="/kontakt"
-              className="text-sm font-medium bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg transition-colors duration-200"
+              className="text-sm font-medium bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg transition-colors duration-200 whitespace-nowrap"
             >
               Besplatna Konsultacija
             </Link>
@@ -50,7 +51,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-muted hover:text-foreground"
+            className="lg:hidden p-2 text-muted hover:text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -68,7 +69,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link

@@ -604,6 +604,24 @@ export default function Home() {
             </div>
           ))}
         </div>
+        {/* Link na landing stranicu za plaže i hotele */}
+        <div className="page-hero relative overflow-hidden mt-10 rounded-2xl px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div aria-hidden className="tech-grid-dark absolute inset-0 pointer-events-none" />
+          <div className="relative z-10">
+            <div className="text-mint text-sm font-semibold tracking-widest uppercase mb-2">
+              Za plaže i hotele
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Imate plažu ili hotel?
+            </h3>
+            <p className="text-slate-200 max-w-xl">
+              QR naručivanje, mapa ležaljki, prijava kvarova i ankete gostiju — pogledajte kako radi, za 46 sekundi.
+            </p>
+          </div>
+          <Button href="/plaze-i-hoteli" size="lg" className="relative z-10 shrink-0">
+            Pogledajte Kako Radi
+          </Button>
+        </div>
       </Section>
 
       {/* Other Services */}

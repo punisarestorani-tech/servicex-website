@@ -6,6 +6,7 @@ const footerLinks = {
     { name: 'Automatizacija', href: '/usluge#automatizacija' },
     { name: 'AI Agenti', href: '/usluge#ai-agenti' },
     { name: 'Inovativna Rješenja', href: '/usluge#inovativna-rjesenja' },
+    { name: 'Plaže i Hoteli', href: '/plaze-i-hoteli' },
   ],
   kompanija: [
     { name: 'O Nama', href: '/o-nama' },
