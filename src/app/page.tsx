@@ -377,9 +377,35 @@ export default function Home() {
             Kako izgleda u praksi?
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            Pogledajte naše aplikacije u akciji
+            ServiceX za 35 sekundi — šta radimo i kako
           </p>
         </div>
+        {/* Promo video — horizontalna verzija na desktopu, vertikalna na telefonu */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="hidden md:block rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/20 bg-black">
+            <video
+              className="w-full aspect-video"
+              src="/video/servicex-promo-16x9.mp4"
+              poster="/video/servicex-promo-16x9.jpg"
+              controls
+              playsInline
+              preload="none"
+            />
+          </div>
+          <div className="md:hidden max-w-[320px] mx-auto rounded-[2rem] overflow-hidden border-4 border-slate-800 shadow-2xl shadow-primary/20 bg-black">
+            <video
+              className="w-full aspect-[9/16]"
+              src="/video/servicex-promo-9x16.mp4"
+              poster="/video/servicex-promo-9x16.jpg"
+              controls
+              playsInline
+              preload="none"
+            />
+          </div>
+        </div>
+        <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
+          Naše aplikacije u akciji
+        </h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Video 1 - Tehnička služba */}
           <div>
